@@ -5,7 +5,7 @@ int main() {
 	sieve[0] = 1;
 	sieve[1] = 1;
 	
-	int i, j, k;	
+	int i = 2, j = 2<<1, k;	
 	
 	for(i = 2; i <= 101; i++) {
 		if(sieve[i] == 1) {

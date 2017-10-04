@@ -25,10 +25,15 @@ int main() {
         }
         printf("\n");
         */
-        while(s<V) {
+        while(s<V && k > -1) {
             s+=A[k--];
         }
-        printf("%d\n", (N-1-k));
+        if(s < V) {
+        	printf("-1\n");
+        }
+        else {
+        	printf("%d\n", (N-1-k));
+        }
     }
     return 0;
 }
@@ -47,7 +52,8 @@ void merge(int* a, int l, int r) {
     int m = (l+r)/2 + 1;
     int start = 0;
     int b[r-l+1];
-
+	int i, j;
+	
     int cl = l, cr = r, cm = m;
     while(start <= r-l) {
         if(((a[cl] <= a[cm])||(cm>r)) && (cl<m)) {
@@ -56,7 +62,7 @@ void merge(int* a, int l, int r) {
             b[start++] = a[cm++];
         }
     }
-    for(int i = l, j = 0; i <= r; i++, j++) {
+    for(i = l, j = 0; i <= r; i++, j++) {
         a[i] = b[j];
     }
     return;
