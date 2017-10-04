@@ -10,7 +10,7 @@ int main() {
     int a[N];
 
     for(l = 0; l < N; l++) { // loop for array input
-        scanf("%d", &a[i]);
+        scanf("%d", &a[l]);
     }
 
     for(l = 0; l < Q; l++) { // loop for updates
