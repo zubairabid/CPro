@@ -22,7 +22,7 @@ int main() {
     for(l = 0; l < N; l++) { // loop to update and print
         r += b[l];
         a[l] += r;
-        printf("%d ", a[l1]);
+        printf("%d ", a[l]);
     }
     printf("\n");
 
