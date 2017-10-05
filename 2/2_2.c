@@ -22,10 +22,9 @@ int main(void) {
 				l++;
 				//printf("Left pointer is now at %d\n", l);
 			} while(fr[A[r]] > 1);
-			sum--;
+			
 			fr[A[r]] = 0;
 			r--;
-			l++;
 		}
 		else {
 			sum += ((r-l+1)*(r-l+2))/2;
