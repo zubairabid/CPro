@@ -12,7 +12,7 @@ int main() {
         scanf("%d", &a[i]);
     }
 
-    for(i = 1; i < (1<<N); i++) { //loop for subsets
+    for(i = 0; i < (1<<N); i++) { //loop for subsets
         sum = 0;
         //fill subset array:
         for(j = N-1; j>=0; j--) {
