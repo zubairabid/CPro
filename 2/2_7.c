@@ -2,22 +2,22 @@
 //#include <stdlib.h>
 //#include <math.h>
 
-void m_sort(int*,int, int);
-void merge(int*, int, int);
+void m_sort(long long int*,long long int, long long int);
+void merge(long long int*, long long int, long long int);
 int main() {
-    int i, j, n;
+    long long int i, n;
     //data input
-    scanf("%d", &n);
-    int a[n];
+    scanf("%lld", &n);
+    long long int a[n];
 
     for(i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
+        scanf("%lld", &a[i]);
     }
 
     m_sort(a, 0, n-1);
     //\data input
     //mean
-    int s = 0, m = a[0], freq = 0, max = a[0], mfreq = 0;
+    long long int s = 0, m = a[0], freq = 0, max = a[0], mfreq = 0;
     for(i = 0; i < n; i++) {
         s+= a[i]; //sum
 
@@ -34,17 +34,17 @@ int main() {
         }
     }
 
-    int mean = s/n;
-    int mode = max;
-    int median = a[n/2];
+    long long int mean = s/n;
+    long long int mode = max;
+    long long int median = a[n/2];
 
-    printf("%d %d %d\n", mean, median, mode);//TODO print the 3
+    printf("%lld %lld %lld\n", mean, median, mode);//TODO print the 3
 
     return 0;
 }
 
 
-void m_sort(int* a, int l, int r) {
+void m_sort(long long int* a, long long int l, long long int r) {
     if(l==r)
         return;
     m_sort(a, l, ((l+r)/2));
@@ -54,12 +54,12 @@ void m_sort(int* a, int l, int r) {
     return;
 }
 
-void merge(int* a, int l, int r) {
-    int m = (l+r)/2 + 1;
-    int start = 0;
-    int b[r-l+1];
+void merge(long long int* a, long long int l, long long int r) {
+    long long int m = (l+r)/2 + 1;
+    long long int start = 0;
+    long long int b[r-l+1];
 
-    int cl = l, cr = r, cm = m;
+    long long int cl = l, cr = r, cm = m;
     while(start <= r-l) {
         if(((a[cl] <= a[cm])||(cm>r)) && (cl<m)) {
             b[start++] = a[cl++];       }
@@ -67,7 +67,8 @@ void merge(int* a, int l, int r) {
             b[start++] = a[cm++];
         }
     }
-    for(int i = l, j = 0; i <= r; i++, j++) {
+    long long int i, j;
+    for(i = l, j = 0; i <= r; i++, j++) {
         a[i] = b[j];
     }
     return;
