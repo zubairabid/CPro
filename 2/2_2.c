@@ -12,15 +12,15 @@ int main(void) {
 	}
 	
 	while(r < N) {
-		printf("Right pointer is at %lld (left at %lld)\n", r, l);
+		//printf("Right pointer is at %lld (left at %lld)\n", r, l);
 		fr[A[r]]++;
-		printf("%lld exists. Frequency is %lld\n", A[r], fr[A[r]]);
+		//printf("%lld exists. Frequency is %lld\n", A[r], fr[A[r]]);
 		if(fr[A[r]] > 1) {
 			do {
 				fr[A[l]]--;
-				printf("%lld now existed %lld times\n", A[l], fr[A[l]]);
+				//printf("%lld now existed %lld times\n", A[l], fr[A[l]]);
 				l++;
-				printf("Left pointer is now at %lld\n", l);
+				//printf("Left pointer is now at %lld\n", l);
 			} while(fr[A[r]] > 1);
 			
 			fr[A[r]] = 0;
