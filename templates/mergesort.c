@@ -2,10 +2,14 @@
 //#include <stdlib.h>
 //#include <math.h>
 
-void m_sort(int*,int, int);
-void merge(int*, int, int);
+//USAGE: function init before main, rest after. Sorts by ascending order. 
+//       call m_sort(array_name, start, end_of_array)
+//       decalre array globally
 
-void m_sort(int* a, int l, int r) {
+void m_sort(long long int*,long long int, long long int);
+void merge(long long int*, long long int, long long int);
+
+void m_sort(long long int* a, long long int l, long long int r) {
     if(l==r)
         return;
     m_sort(a, l, ((l+r)/2));
@@ -15,13 +19,13 @@ void m_sort(int* a, int l, int r) {
     return;
 }
 
-void merge(int* a, int l, int r) {
-    int m = (l+r)/2 + 1;
-    int start = 0;
-    int b[r-l+1];
-	int i, j;
+void merge(long long int* a, long long int l, long long int r) {
+    long long int m = (l+r)/2 + 1;
+    long long int start = 0;
+    long long int b[r-l+1];
+	long long int i, j;
 	
-    int cl = l, cr = r, cm = m;
+    long long int cl = l, cr = r, cm = m;
     while(start <= r-l) {
         if(((a[cl] <= a[cm])||(cm>r)) && (cl<m)) {
             b[start++] = a[cl++];       }
