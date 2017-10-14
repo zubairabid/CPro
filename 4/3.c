@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-long long int a[10005];
+long long int a[10000005];
 
 
 void m_sort(long long int*,long long int, long long int);
