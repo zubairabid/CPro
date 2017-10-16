@@ -2,13 +2,20 @@
 //#include <stdlib.h>
 //#include <math.h>
 
-//USAGE: function init before main, rest after. Sorts by ascending order. 
-//       call m_sort(array_name, start, end_of_array)
-//       decalre array globally
+/*USAGE: 
+	For use with long long int in C
+	The functions must be initilaised before main(). The rest may come after. 
+	Sorts by ascending order. 
+	Call m_sort(array_name, start_index_of_array, end_index_of_array)
+	Declare the array globally.
+*/
 
 void m_sort(long long int*,long long int, long long int);
 void merge(long long int*, long long int, long long int);
 
+/*
+	
+*/
 void m_sort(long long int* a, long long int l, long long int r) {
     if(l==r)
         return;
