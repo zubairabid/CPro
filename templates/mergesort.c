@@ -14,7 +14,8 @@ void m_sort(long long int*,long long int, long long int);
 void merge(long long int*, long long int, long long int);
 
 /*
-	
+	Called first for merge purposes
+	Recursively breaks the array into smaller arrays and passes them for merging
 */
 void m_sort(long long int* a, long long int l, long long int r) {
     if(l==r)
@@ -26,6 +27,10 @@ void m_sort(long long int* a, long long int l, long long int r) {
     return;
 }
 
+/*
+	Called by function m_sort
+	Merges the smaller arrays by comparing against each element in succession
+*/
 void merge(long long int* a, long long int l, long long int r) {
     long long int m = (l+r)/2 + 1;
     long long int start = 0;
