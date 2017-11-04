@@ -5,7 +5,7 @@ long long int base[2][2] = {{1, 1}, {1, 0}};
 
 void square();
 void mult();
-void fibo(int);
+void fibo(long long int);
 
 int main() {
 	long long int n;
@@ -29,7 +29,7 @@ int main() {
 	return 0;
 }
 
-void fibo(int n) {
+void fibo(long long int n) {
 	if(n == 1)
 		return;
 	fibo(n/2);
