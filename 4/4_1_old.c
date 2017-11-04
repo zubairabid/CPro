@@ -5,8 +5,8 @@ int main() {
 	dp[0] = 0;
 	dp[1] = 1;
 	dp[2] = 1;
-	//scanf("%lld", &N);
-	N=1																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												08;
+	scanf("%lld", &N);
+	//N=1																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												08;
 	if(N==1 || N==2) {																																																																																																																																					
 		printf("1\n");
 	}
