@@ -20,8 +20,8 @@ int main() {
 		scanf("%s", eh);
 		scanf("%d %d", &x, &y);
 		//correction for 1 indexing:
-		x--;
-		y--;
+		//x--;
+		//y--;
 		if(strcmp(eh, "Find") == 0) {
 			printf("Entered Find zone\n");
 			map[x][y] = find(x, y);
