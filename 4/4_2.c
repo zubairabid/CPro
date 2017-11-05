@@ -13,10 +13,11 @@ void m_sort(long long int*,long long int, long long int);
 void merge(long long int*, long long int, long long int);
 
 long long int arr[1000];
+long long int state[1000];
 
 int main() {
 
-	long long int i, j, k, T, N, res = 0;;
+	long long int i, j, k, T, N, res = 0, c = 0, min, max;;
  
 	scanf("%lld %lld", &N, &k);
 
@@ -24,6 +25,46 @@ int main() {
 		scanf("%lld", &arr[i]);
 	}
 
+	j = 1;
+	c = 0;
+	min = arr[N-1];
+	max = arr[N-1];
+
+	for(i = N-2; i >= 0; i--) {
+		if(arr[i] < min) {
+			min = arr[i];
+		}
+		if(arr[i] > max || i == 0) {
+			if(j > 1) {
+				state[c++] = max - min;
+			}
+			max = arr[i];
+			min = arr[i];
+			j = 1;
+			continue;
+		}
+		else {
+			j++;
+		}
+	}
+	for(i = 0; i < c; i++) {
+		printf("%lld ", arr[i]);
+	}
+	printf("\n");
+	m_sort(state, 0, c-1);
+
+	for(i = 0; i < c; i++) {
+		printf("%lld ", arr[i]);
+	}
+	printf("\n");
+	
+	for(i = c-1; i >= 0 && ((i - c) <= k); i--) {
+		res += state[i];
+	}
+
+	printf("%lld\n", res);
+
+	/*
 	m_sort(arr, 0, N-1);
 	//for(i = 0; i < N; i++) {
 	//	printf("%lld ", arr[i]);
@@ -34,7 +75,7 @@ int main() {
 	}
 
 	printf("%lld\n", res);
-
+	*/
 	/*
 	long long int i, j, k, T, N;
  
