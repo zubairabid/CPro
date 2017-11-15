@@ -3,7 +3,8 @@
 //#include <math.h>
 
 long long int A[1000007];
-long long int track[1000007];
+//long long int track[1000007];
+long long int change[1000007];
 
 int main() {
 	/*
@@ -74,7 +75,7 @@ int main() {
 	*/
 
 	//default constructs	
-	long long int i, j, k, T, N, M, c = 0, length = 0, max = 2<<31, change;
+	long long int i, j, k, T, N, M, c = 0, length = 0, max = 2<<31;
 	//Input into N, M. N is number of inputs, M the number of flippables
 	scanf("%lld %lld", &N, &M);
 	
@@ -84,20 +85,24 @@ int main() {
 	}
 	
 	i = 0;
+	j = 0; // tracks additions to change
+	k = 0; // tracks access to change
 	c = 0;
 	length = 0;
 	max = 2<< 31;
 	// possible backtracking, but still theoretically 2N at max.
 	while(i < N) {
+		//printf("%lld\n", i);
 		if(A[i] == 1) {
 			;
 		}
 		else {
 			c++;
 			//TODO: set the change variable
-			if(c == 1) {
-				change = i;
-			}
+			//if(c == 1) {
+			//	change = i;
+			//}
+			//change[j++] = i;
 		}
 
 		if(c > M) { // when the number of flipped bits is more than accounted for, 
@@ -106,13 +111,26 @@ int main() {
 				max = length;
 			}
 			// since we don't need, reset length, flip counter, i.
-			length = 0; 
-			i = change + 1;
-			c = 0;
+			length = length - change[k++]; 
+			i--;
+			c--; // backtrack last change
+			c--; // account for missing flip
+			//j--; // because we'd have fucked this up by a bit.
+			////CORNER CASE BITXHES
+			//if(A[i] == 0) {
+			//	change[j++] = i;
+			//	
+			//}
+			i++;
 			continue; // we don't want an accidental i++ again.
 		}
 		else {
 			length++; //yeh obvio
+		}
+		change[j]++;
+		if(A[i] != 1) {
+			j++;
+			//change[j++] = length-((j-1)<0?0:(change[j-1]));
 		}
 
 		if(i == N-1) {
