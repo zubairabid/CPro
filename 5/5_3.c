@@ -47,7 +47,7 @@ int main() {
 				if(T > answer) {
 					answer = T;
 				}
-		/*		printf(" \t \t");
+				printf(" \t \t");
 			for(temp = 1; temp <= N; temp++) {
 				printf("%lld\t", ar[temp]);
 			}
@@ -69,7 +69,7 @@ int main() {
 				}
 				printf("\n");
 			}
-			printf("------------------------------\n");	*/
+			printf("------------------------------\n");	
 				continue;}
 			}
 			
@@ -100,7 +100,7 @@ int main() {
 				answer = T;
 			}
 
-/*
+
 			printf(" \t \t");
 			for(temp = 1; temp <= N; temp++) {
 				printf("%lld\t", ar[temp]);
@@ -125,7 +125,7 @@ int main() {
 			}
 			printf("------------------------------\n");
 		
-*/		
+		
 		}
 	}
 	if(answer < 0) {
