@@ -7,11 +7,11 @@ long long int traceroute[10000009];
 void print(long long int mloc) {
 	//printf("At loc = %lld; routing to arr[%lld] = %lld\n", mloc, mloc, arr[mloc]);
 	if(traceroute[mloc] == -1) {
-		printf("%lld ", mloc);
+		printf("[%lld]: %lld ", mloc, arr[mloc]);
 		return;
 	}
 	print(traceroute[mloc]);
-	printf("%lld ", mloc);
+	printf("[%lld]: %lld ", mloc, arr[mloc]);
 }
 
 int main(void) {
